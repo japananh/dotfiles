@@ -1,0 +1,54 @@
+[user]
+	name = "{{ .name }}" 
+	email = "{{ .email }}"
+	signingkey = "{{ .signingkey }}" 
+[alias]
+	cm = commit -m
+	p = push
+	pf = push -f
+	st = status
+	stp = stash pop
+	chb = checkout -b
+	ch = checkout
+	br = branch
+	brd = branch -D
+	brm = branch -m
+	brl = branch --list
+	s = stash
+	sp = stash pop
+	a = add .
+	rs = reset
+	cma = commit --amend --no-edit
+	pdo = push -d origin
+	cp = cherry-pick
+	pl = pull
+	f = fetch
+	lo = log --oneline
+    wip = !git apply . && git commit -m "WIP"
+    undo = reset HEAD~1
+	wta = worktree apply
+	wtr = worktree remove
+	wtl = worktree list
+	rb = rebase
+	rbc = rebase --continue
+	rsh = reset --hard
+	reauthor = !bash -c 'git rebase --onto $1 --exec \"git commit --amend --author=$2\" $1' --
+	rp = replace
+[push]
+	default = current
+[core]
+      	editor = 'vi'
+[pull]
+        rebase = true
+[fetch]
+        prune = true
+[diff]
+        colorMoved = zebra
+[url "https://github.com/"]
+	insteadOf = git://github.com/
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[gpg]
+	format = openpgp
