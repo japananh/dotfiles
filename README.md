@@ -34,9 +34,23 @@ chezmoi edit-config
 # Add a file as a template
 chezmoi add -T --template ~/.gitconfig
 
+# If a file already managed by chezmoi, but not a template
+chezmoi chattr +template ~/.zshrc
+
 # Update `~/.gitconfig` file using template as below
 [user]
     email = "{{ .email }}"
     name = "{{ .name }}"
+```
+
+- Push config to Github
+
+```bash
+# Open a shell in the source directory
+chezmoi cd
+
+# Run `git` in the source directory and pass extra args to the command
+# Need `--` to prevent chezmoi from consuming these args
+chezmoi git -- commit -m "feat: update dotfiles"
 ```
 
