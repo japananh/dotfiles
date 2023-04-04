@@ -1,7 +1,7 @@
 [user]
-	name = "{{ .name }}" 
-	email = "{{ .email }}"
-	signingkey = "{{ .signingkey }}" 
+	name = "{{ .github_name | quote }}" 
+	email = "{{ .github_email | quote }}"
+	signingkey = "{{ .github_signingkey | quote }}" 
 [alias]
 	cm = commit -m
 	p = push
